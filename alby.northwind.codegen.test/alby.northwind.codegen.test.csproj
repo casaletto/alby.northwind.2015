@@ -62,15 +62,16 @@
       <HintPath>..\..\alby.codegen.2015\bin\alby.codegen.runtime.2015.dll</HintPath>
     </Reference>
     <Reference Include="alby.core.2015">
-      <HintPath>..\..\alby.core.2015\bin\alby.core.2015.dll</HintPath>
+      <HintPath>..\..\alby.codegen.2015\bin\alby.core.2015.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\alby.codegen.2015\referenceBin\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\..\alby.codegen.2015\bin\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\build\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\alby.codegen.2015\bin\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -204,9 +205,6 @@
       <Project>{9db3c753-1855-4168-8161-efafd70fdd67}</Project>
       <Name>alby.northwind.codegen</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
