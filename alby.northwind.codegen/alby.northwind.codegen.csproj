@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DB3C753-1855-4168-8161-EFAFD70FDD67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>alby.northwind.codegen</RootNamespace>
+    <AssemblyName>alby.northwind.codegen.2015</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="alby.codegen.runtime.2015">
+      <HintPath>..\..\alby.codegen.2015\bin\alby.codegen.runtime.2015.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\alby.codegen.2015\referenceBin\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="database\NorthwindDatabase.cs" />
+    <Compile Include="database\NorthwindDatabaseSingletonHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="query\CustomerOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="query\CustomerOrderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="query\TestQuery01.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="query\TestQuery01Factory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="storedProcedure\CodegenAllTypesInATableTypeTest.cs" />
+    <Compile Include="storedProcedure\CodegenAllTypesInATableTypeTest.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTableTypePrecisionScaleTest.cs" />
+    <Compile Include="storedProcedure\CodegenTableTypePrecisionScaleTest.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestDatasetNotRecordset1.cs" />
+    <Compile Include="storedProcedure\CodegenTestDatasetNotRecordset2.cs" />
+    <Compile Include="storedProcedure\CodegenTestDatasetNotRecordset3.cs" />
+    <Compile Include="storedProcedure\CodegenTestFourResultSets.cs" />
+    <Compile Include="storedProcedure\CodegenTestFourResultSets.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestFourResultSets.rs2.cs" />
+    <Compile Include="storedProcedure\CodegenTestFourResultSets.rs3.cs" />
+    <Compile Include="storedProcedure\CodegenTestFourResultSets.rs4.cs" />
+    <Compile Include="storedProcedure\CodegenTestMathParameters.cs" />
+    <Compile Include="storedProcedure\CodegenTestParameters.cs" />
+    <Compile Include="storedProcedure\CodegenTestResultSetTypesAllNotNull.cs" />
+    <Compile Include="storedProcedure\CodegenTestResultSetTypesAllNotNull.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestResultSetTypesAllNull.cs" />
+    <Compile Include="storedProcedure\CodegenTestResultSetTypesAllNull.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcLoadTest.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcTableType.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcTableType.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcUdtTableType.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcUdtTableType.rs1.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcVarmaxUnicodeTest.cs" />
+    <Compile Include="storedProcedure\CodegenTestStoredProcVarmaxUnicodeTest.rs1.cs" />
+    <Compile Include="storedProcedure\CustOrderHist.cs" />
+    <Compile Include="storedProcedure\CustOrderHist.rs1.cs" />
+    <Compile Include="storedProcedure\CustOrdersDetail.cs" />
+    <Compile Include="storedProcedure\CustOrdersDetail.rs1.cs" />
+    <Compile Include="storedProcedure\CustOrdersOrders.cs" />
+    <Compile Include="storedProcedure\CustOrdersOrders.rs1.cs" />
+    <Compile Include="storedProcedure\Employee_Sales_by_Country.cs" />
+    <Compile Include="storedProcedure\Employee_Sales_by_Country.rs1.cs" />
+    <Compile Include="storedProcedure\MyAllTypesInATableType.tt.cs" />
+    <Compile Include="storedProcedure\MyAllTypesInATableType.ttlist.cs" />
+    <Compile Include="storedProcedure\MyBigIntTableType.tt.cs" />
+    <Compile Include="storedProcedure\MyBigIntTableType.ttlist.cs" />
+    <Compile Include="storedProcedure\MyPrecisonScaleTableType.tt.cs" />
+    <Compile Include="storedProcedure\MyPrecisonScaleTableType.ttlist.cs" />
+    <Compile Include="storedProcedure\MyUdtTableType.tt.cs" />
+    <Compile Include="storedProcedure\MyUdtTableType.ttlist.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType1.tt.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType1.ttlist.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType2.tt.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType2.ttlist.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType3.tt.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType3.ttlist.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType4.tt.cs" />
+    <Compile Include="storedProcedure\MyVarmaxUnicodeTableType4.ttlist.cs" />
+    <Compile Include="storedProcedure\NameAddressTableType.tt.cs" />
+    <Compile Include="storedProcedure\NameAddressTableType.ttlist.cs" />
+    <Compile Include="storedProcedure\SalesByCategory.cs" />
+    <Compile Include="storedProcedure\SalesByCategory.rs1.cs" />
+    <Compile Include="storedProcedure\Sales_by_Year.cs" />
+    <Compile Include="storedProcedure\Sales_by_Year.rs1.cs" />
+    <Compile Include="storedProcedure\sp_alterdiagram.cs" />
+    <Compile Include="storedProcedure\sp_creatediagram.cs" />
+    <Compile Include="storedProcedure\sp_dropdiagram.cs" />
+    <Compile Include="storedProcedure\sp_helpdiagramdefinition.cs" />
+    <Compile Include="storedProcedure\sp_helpdiagramdefinition.rs1.cs" />
+    <Compile Include="storedProcedure\sp_helpdiagrams.cs" />
+    <Compile Include="storedProcedure\sp_helpdiagrams.rs1.cs" />
+    <Compile Include="storedProcedure\sp_renamediagram.cs" />
+    <Compile Include="storedProcedure\sp_upgraddiagrams.cs" />
+    <Compile Include="storedProcedure\Ten_Most_Expensive_Products.cs" />
+    <Compile Include="storedProcedure\Ten_Most_Expensive_Products.rs1.cs" />
+    <Compile Include="table\Categories.cs" />
+    <Compile Include="table\CategoriesChildren.cs" />
+    <Compile Include="table\CategoriesFactory.cs" />
+    <Compile Include="table\CustomerCustomerDemo.cs" />
+    <Compile Include="table\CustomerCustomerDemoChildren.cs" />
+    <Compile Include="table\CustomerCustomerDemoFactory.cs" />
+    <Compile Include="table\CustomerDemographics.cs" />
+    <Compile Include="table\CustomerDemographicsChildren.cs" />
+    <Compile Include="table\CustomerDemographicsFactory.cs" />
+    <Compile Include="table\Customers.cs" />
+    <Compile Include="table\CustomersChildren.cs" />
+    <Compile Include="table\CustomersFactory.cs" />
+    <Compile Include="table\DatabaseVersion.cs" />
+    <Compile Include="table\DatabaseVersionChildren.cs" />
+    <Compile Include="table\DatabaseVersionFactory.cs" />
+    <Compile Include="table\Employees.cs" />
+    <Compile Include="table\EmployeesChildren.cs" />
+    <Compile Include="table\EmployeesFactory.cs" />
+    <Compile Include="table\EmployeeTerritories.cs" />
+    <Compile Include="table\EmployeeTerritoriesChildren.cs" />
+    <Compile Include="table\EmployeeTerritoriesFactory.cs" />
+    <Compile Include="table\Orders.cs" />
+    <Compile Include="table\OrdersChildren.cs" />
+    <Compile Include="table\OrdersFactory.cs" />
+    <Compile Include="table\Order_Details.cs" />
+    <Compile Include="table\Order_DetailsChildren.cs" />
+    <Compile Include="table\Order_DetailsFactory.cs" />
+    <Compile Include="table\Products.cs" />
+    <Compile Include="table\ProductsChildren.cs" />
+    <Compile Include="table\ProductsFactory.cs" />
+    <Compile Include="table\Region.cs" />
+    <Compile Include="table\RegionChildren.cs" />
+    <Compile Include="table\RegionFactory.cs" />
+    <Compile Include="table\Shippers.cs" />
+    <Compile Include="table\ShippersChildren.cs" />
+    <Compile Include="table\ShippersFactory.cs" />
+    <Compile Include="table\Suppliers.cs" />
+    <Compile Include="table\SuppliersChildren.cs" />
+    <Compile Include="table\SuppliersFactory.cs" />
+    <Compile Include="table\sysdiagrams.cs" />
+    <Compile Include="table\sysdiagramsChildren.cs" />
+    <Compile Include="table\sysdiagramsFactory.cs" />
+    <Compile Include="table\Territories.cs" />
+    <Compile Include="table\TerritoriesChildren.cs" />
+    <Compile Include="table\TerritoriesFactory.cs" />
+    <Compile Include="table\TestTable1.cs" />
+    <Compile Include="table\TestTable1Children.cs" />
+    <Compile Include="table\TestTable1Factory.cs" />
+    <Compile Include="table\TestTable2a.cs" />
+    <Compile Include="table\TestTable2aChildren.cs" />
+    <Compile Include="table\TestTable2aFactory.cs" />
+    <Compile Include="table\TestTable2b.cs" />
+    <Compile Include="table\TestTable2bChildren.cs" />
+    <Compile Include="table\TestTable2bFactory.cs" />
+    <Compile Include="table\TestTable3.cs" />
+    <Compile Include="table\TestTable3Children.cs" />
+    <Compile Include="table\TestTable3Factory.cs" />
+    <Compile Include="table\TestTable4.cs" />
+    <Compile Include="table\TestTable4Children.cs" />
+    <Compile Include="table\TestTable4Factory.cs" />
+    <Compile Include="table\TestTable5.cs" />
+    <Compile Include="table\TestTable5Children.cs" />
+    <Compile Include="table\TestTable5Factory.cs" />
+    <Compile Include="table\TestTable6a.cs" />
+    <Compile Include="table\TestTable6aChildren.cs" />
+    <Compile Include="table\TestTable6aFactory.cs" />
+    <Compile Include="table\TestTable7Unicode_ẻẽếℚℛℜᾈᾉᾊᄐᄑᄒ___ⅠⅡⅢⅴⅵⅶɑ̀ɒ́ɑ̂ािी०१२︳︴﹍﹎﹏_.cs" />
+    <Compile Include="table\TestTable7Unicode_ẻẽếℚℛℜᾈᾉᾊᄐᄑᄒ___ⅠⅡⅢⅴⅵⅶɑ̀ɒ́ɑ̂ािी०१२︳︴﹍﹎﹏_Children.cs" />
+    <Compile Include="table\TestTable7Unicode_ẻẽếℚℛℜᾈᾉᾊᄐᄑᄒ___ⅠⅡⅢⅴⅵⅶɑ̀ɒ́ɑ̂ािी०१२︳︴﹍﹎﹏_Factory.cs" />
+    <Compile Include="table\フル_ツ.cs" />
+    <Compile Include="table\フル_ツChildren.cs" />
+    <Compile Include="table\フル_ツFactory.cs" />
+    <Compile Include="view\Alphabetical_list_of_products.cs" />
+    <Compile Include="view\Alphabetical_list_of_productsFactory.cs" />
+    <Compile Include="view\Category_Sales_for_1997.cs" />
+    <Compile Include="view\Category_Sales_for_1997Factory.cs" />
+    <Compile Include="view\Current_Product_List.cs" />
+    <Compile Include="view\Current_Product_ListFactory.cs" />
+    <Compile Include="view\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="view\Customer_and_Suppliers_by_CityFactory.cs" />
+    <Compile Include="view\Invoices.cs" />
+    <Compile Include="view\InvoicesFactory.cs" />
+    <Compile Include="view\Orders_Qry.cs" />
+    <Compile Include="view\Orders_QryFactory.cs" />
+    <Compile Include="view\Order_Details_Extended.cs" />
+    <Compile Include="view\Order_Details_ExtendedFactory.cs" />
+    <Compile Include="view\Order_Subtotals.cs" />
+    <Compile Include="view\Order_SubtotalsFactory.cs" />
+    <Compile Include="view\Products_Above_Average_Price.cs" />
+    <Compile Include="view\Products_Above_Average_PriceFactory.cs" />
+    <Compile Include="view\Products_by_Category.cs" />
+    <Compile Include="view\Products_by_CategoryFactory.cs" />
+    <Compile Include="view\Product_Sales_for_1997.cs" />
+    <Compile Include="view\Product_Sales_for_1997Factory.cs" />
+    <Compile Include="view\Quarterly_Orders.cs" />
+    <Compile Include="view\Quarterly_OrdersFactory.cs" />
+    <Compile Include="view\Sales_by_Category.cs" />
+    <Compile Include="view\Sales_by_CategoryFactory.cs" />
+    <Compile Include="view\Sales_Totals_by_Amount.cs" />
+    <Compile Include="view\Sales_Totals_by_AmountFactory.cs" />
+    <Compile Include="view\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="view\Summary_of_Sales_by_QuarterFactory.cs" />
+    <Compile Include="view\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="view\Summary_of_Sales_by_YearFactory.cs" />
+    <Compile Include="view\TestView1.cs" />
+    <Compile Include="view\TestView1Factory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="codegen.cmd" />
+    <None Include="codegen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\sql\Alphabetical_list_of_products.LoadByProductName.sql" />
+    <EmbeddedResource Include="view\sql\Alphabetical_list_of_products.LoadByProductNameAndDiscontinued.sql" />
+    <EmbeddedResource Include="view\sql\Customer_and_Suppliers_by_City.LoadByCity.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadAll.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByCustomer.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByCustomerIdEmployeeIdOrderDateFreight.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByRegion.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByShippedDate.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByStateAndCountry.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.LoadByTerritory.sql" />
+    <EmbeddedResource Include="query\sql\CustomerOrder.Select.sql" />
+    <EmbeddedResource Include="query\sql\TestQuery01.LoadByTheKey.sql" />
+    <EmbeddedResource Include="query\sql\TestQuery01.Select.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="table\sql\Products.LoadByDiscontinued.sql" />
+    <EmbeddedResource Include="table\sql\Products.LoadByProductId.sql" />
+    <EmbeddedResource Include="table\sql\TestTable2a.LoadByPostCode.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

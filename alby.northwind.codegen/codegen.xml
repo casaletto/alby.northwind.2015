@@ -1,0 +1,161 @@
+<CodeGen>
+
+	<Namespace>alby.northwind.codegen</Namespace>
+	<ResourceNamespace>alby.northwind.codegen</ResourceNamespace>
+
+	<Directory>c:\albyStuff\development\alby.northwind.2015\alby.northwind.codegen</Directory>
+	<ConnectionString>Data Source=localhost;Initial Catalog=Northwind;Network Library=DBMSSOCN;Integrated Security=SSPI;</ConnectionString>
+
+	<ConcurrencyColumn>update_date</ConcurrencyColumn>
+
+	<PrefixObjectsWithSchema></PrefixObjectsWithSchema>
+
+	<!-- ########################################################################################################## -->
+
+	<UnitTest>
+		<Namespace>alby.northwind.codegen.test</Namespace>
+		<Directory>c:\albyStuff\development\alby.northwind.2015\alby.northwind.codegen.test\CodeGenUnitTest</Directory>
+		<TableNamespace>alby.northwind.codegen.table</TableNamespace>
+		<TableNamespacePrefix>t</TableNamespacePrefix>
+	</UnitTest>
+
+	<!-- ########################################################################################################## -->
+
+	<Database SubDirectory="database" >
+	</Database>
+
+	<!-- ########################################################################################################## -->
+	
+	<Tables SubDirectory="table" >
+		<Table Class="Products" >
+			<Methods>
+				<Method Name="LoadByDiscontinued" Where="sql\Products.LoadByDiscontinued.sql">
+					<Parameters>
+						<Parameter Name="discontinued" Type="bool?" />
+					</Parameters>
+				</Method>
+				<Method Name="LoadByProductID" Where="sql\Products.LoadByProductId.sql">
+					<Parameters>
+						<Parameter Name="productId" Type="int?" />
+					</Parameters>
+				</Method>
+			</Methods>
+		</Table>
+
+		<Table Class="TestTable2a" >
+			<Methods>
+				<Method Name="LoadByPostCode" Where="sql\TestTable2a.LoadByPostCode.sql">
+					<Parameters>
+						<Parameter Name="PostCode" Type="string" />
+					</Parameters>
+				</Method>
+			</Methods>
+		</Table>
+
+	</Tables>
+
+	<!-- ########################################################################################################## -->
+
+	<Views SubDirectory="view" >
+
+		<View Class="Alphabetical_list_of_products" >
+			<Methods>
+				<Method Name="LoadByProductName" Where="sql\Alphabetical_list_of_products.LoadByProductName.sql">
+					<Parameters>
+						<Parameter Name="productName" Type="string" />
+					</Parameters>
+				</Method>
+				<Method Name="LoadByProductNameAndDiscontinued" Where="sql\Alphabetical_list_of_products.LoadByProductNameAndDiscontinued.sql">
+					<Parameters>
+						<Parameter Name="productName"	Type="string" />
+						<Parameter Name="discontinued"	Type="bool?" />
+					</Parameters>
+				</Method>
+			</Methods>
+		</View>
+
+		<View Class="Customer_and_Suppliers_by_City" >
+			<Methods>
+				<Method Name="LoadByCity" Where="sql\Customer_and_Suppliers_by_City.LoadByCity.sql">
+					<Parameters>
+						<Parameter Name="city" Type="string" />
+					</Parameters>
+				</Method>
+			</Methods>
+		</View>
+
+	</Views>
+
+	<!-- ########################################################################################################## -->
+
+	<Queries SubDirectory="query" >
+
+		<Query Class="TestQuery01" CodeFile="TestQuery01.cs" Select="sql\TestQuery01.Select.sql" >
+			<Methods>
+				<Method Name="LoadByTheKey" Where="sql\TestQuery01.LoadByTheKey.sql" >
+					<Parameters>
+						<Parameter Name="theKey" Type="int" />
+					</Parameters>
+				</Method>
+			</Methods>
+		</Query>
+
+		<Query Class="CustomerOrder" CodeFile="CustomerOrder.cs" Select="sql\CustomerOrder.Select.sql" >
+			<Methods>
+				<Method Name="Load" Where="sql\CustomerOrder.LoadAll.sql" >
+					<Parameters />
+				</Method>
+
+				<Method Name="LoadByCustomer" Where="sql\CustomerOrder.LoadByCustomer.sql">
+					<Parameters>
+						<Parameter Name="customerId" Type="string" />
+					</Parameters>
+				</Method>
+
+				<Method Name="LoadByRegion" Where="sql\CustomerOrder.LoadByRegion.sql">
+					<Parameters>
+						<Parameter Name="region" Type="string" />
+					</Parameters>
+				</Method>
+
+				<Method Name="LoadByCustomerIdEmployeeIdOrderDateFreight" Where="sql\CustomerOrder.LoadByCustomerIdEmployeeIdOrderDateFreight.sql">
+					<Parameters>
+						<Parameter Name="customerId"	Type="string" />
+						<Parameter Name="employeeId"	Type="int?" />
+						<Parameter Name="orderDate"		Type="DateTime?" />
+						<Parameter Name="freight"		Type="decimal?" />
+					</Parameters>
+				</Method>
+
+				<Method Name="LoadByShippedDate" Where="sql\CustomerOrder.LoadByShippedDate.sql">
+					<Parameters>
+						<Parameter Name="shippedDate" Type="DateTime?"/>
+					</Parameters>
+				</Method>
+
+				<Method Name="LoadByTerritory" Where="sql\CustomerOrder.LoadByTerritory.sql">
+					<Parameters>
+						<Parameter Name="territoryDescription"	Type="string" />
+						<Parameter Name="orderYear"				Type="int?"   />
+					</Parameters>
+				</Method>
+
+			</Methods>
+		</Query>
+		
+	</Queries>
+
+	<!-- ########################################################################################################## -->
+
+	<StoredProcs SubDirectory="storedProcedure" >
+	</StoredProcs>
+	
+	<!-- ########################################################################################################## -->
+
+</CodeGen>
+
+
+
+
+
+
